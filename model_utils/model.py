@@ -94,7 +94,10 @@ class DeepSpeech2Model(object):
         # prepare optimizer and trainer
         optimizer = paddle.optimizer.Adam(
             learning_rate=learning_rate,
-            gradient_clipping_threshold=gradient_clipping)
+            gradient_clipping_threshold=gradient_clipping,
+            learning_rate_decay_a=1/1.2,
+            learning_rate_decay_b=5421356,
+            learning_rate_schedule="discexp")
         trainer = paddle.trainer.SGD(
             cost=self._loss,
             parameters=self._parameters,
