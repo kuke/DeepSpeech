@@ -395,13 +395,13 @@ Please take the following steps to submit a training job:
 
     It should be done only once for the very first time to do the cloud training. Later, the data is kept persisitent on the cloud filesystem and reusable for further job submissions.
 
-    For argument details please refer to [Train DeepSpeech2 on PaddleCloud](https://github.com/PaddlePaddle/models/tree/develop/deep_speech_2/cloud).
+    For argument details please refer to [Train DeepSpeech2 on PaddleCloud](https://github.com/PaddlePaddle/DeepSpeech/tree/develop/cloud).
 
  - Configure training arguments:
 
     Configure the cloud job parameters in `pcloud_submit.sh` (e.g. `NUM_NODES`, `NUM_GPUS`, `CLOUD_TRAIN_DIR`, `JOB_NAME` etc.) and then configure other hyper-parameters for training in `pcloud_train.sh` (just as what you do for local training).
 
-    For argument details please refer to [Train DeepSpeech2 on PaddleCloud](https://github.com/PaddlePaddle/models/tree/develop/deep_speech_2/cloud).
+    For argument details please refer to [Train DeepSpeech2 on PaddleCloud](https://github.com/PaddlePaddle/DeepSpeech/tree/develop/cloud).
 
  - Submit the job:
 
@@ -428,7 +428,7 @@ Please take the following steps to submit a training job:
 For more information about the usage of PaddleCloud, please refer to [PaddleCloud Usage](https://github.com/PaddlePaddle/cloud/blob/develop/doc/usage_cn.md#提交任务).
 
 For more information about the DeepSpeech2 training on PaddleCloud, please refer to
-[Train DeepSpeech2 on PaddleCloud](https://github.com/PaddlePaddle/models/tree/develop/deep_speech_2/cloud).
+[Train DeepSpeech2 on PaddleCloud](https://github.com/PaddlePaddle/DeepSpeech/tree/develop/cloud).
 
 ## Training for Mandarin Language
 
@@ -489,7 +489,7 @@ Language  | Model Name | Training Data | Hours of Speech
 English  | [LibriSpeech Model](http://cloud.dlnel.org/filepub/?uuid=117cde63-cd59-4948-8b80-df782555f7d6) | [LibriSpeech Dataset](http://www.openslr.org/12/) | 960 h
 English  | [BaiduEN8k Model](http://cloud.dlnel.org/filepub/?uuid=37a1c211-ec47-494c-973c-31437a10ae90) | Baidu Internal English Dataset | 8628 h
 Mandarin | [Aishell Model](http://cloud.dlnel.org/filepub/?uuid=61de63b9-6904-4809-ad95-0cc5104ab973) | [Aishell Dataset](http://www.openslr.org/33/) | 151 h
-Mandarin | [BaiduCN1.2k Model](to-be-added) | Baidu Internal Mandarin Dataset | 1204 h
+Mandarin | [BaiduCN1.2k Model](http://cloud.dlnel.org/filepub/?uuid=499569a6-0025-4f40-83e6-1c99527431a6) | Baidu Internal Mandarin Dataset | 1204 h
 
 #### Language Model Released
 
@@ -505,21 +505,21 @@ Language Model | Training Data | Token-based | Size | Descriptions
 
 Test Set                | LibriSpeech Model | BaiduEN8K Model
 :---------------------  | ---------------:  | -------------------:
-LibriSpeech Test-Clean  |   6.85            |   5.73
-LibriSpeech Test-Other  |   21.18           |   14.47
-VoxForge American-Canadian | 12.12          |   7.37
-VoxForge Commonwealth   |   19.82           |   15.58
-VoxForge European       |   30.15           |   19.44
-VoxForge Indian         |   53.73           |   26.15
-Baidu Internal Testset  |   40.75           |   8.82
+LibriSpeech Test-Clean  |   6.85            |   5.41
+LibriSpeech Test-Other  |   21.18           |   13.85
+VoxForge American-Canadian | 12.12          |   7.13
+VoxForge Commonwealth   |   19.82           |   14.93
+VoxForge European       |   30.15           |   18.64
+VoxForge Indian         |   53.73           |   25.51
+Baidu Internal Testset  |   40.75           |   8.48
 
 For reproducing benchmark results on VoxForge data, we provide a script to download data and generate VoxForge dialect manifest files. Please go to ```data/voxforge``` and execute ```sh run_data.sh``` to get VoxForge dialect manifest files. Notice that VoxForge data may keep updating and the generated manifest files may have difference from those we evaluated on.
 
 #### Benchmark Results for Mandarin Model (Character Error Rate)
 
-Test Set                | Aishell Model     | BaiduCN1.2k Model
-:---------------------  | ---------------:  | -------------------:
-Baidu Internal Testset  |   -               |   15.49
+Test Set                |  BaiduCN1.2k Model
+:---------------------  |  -------------------:
+Baidu Internal Testset  |   12.64
 
 #### Acceleration with Multi-GPUs
 
